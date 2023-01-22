@@ -1,0 +1,17 @@
+name: base
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - python-dotenv=0.19.2
+  - pip
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch::pytorch
+  - pytorch::pytorch-cuda=11.7
+  - torchmetrics
+  - pytorch-lightning
+  - hydra-core
+prefix: /opt/conda
