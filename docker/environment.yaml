@@ -5,13 +5,25 @@ channels:
   - nvidia
 dependencies:
   - python=3.10
-  - python-dotenv=0.19.2
   - pip
+  # --------- pytorch --------- #
   - pytorch::torchvision
   - pytorch::torchaudio
   - pytorch::pytorch
   - pytorch::pytorch-cuda=11.7
   - torchmetrics
   - pytorch-lightning
+  # --------- hydra --------- #
   - hydra-core
+  - pip:
+    - hydra-colorlog
+    - hydra-optuna-sweeper
+  # --------- others --------- #
+  - python-dotenv  # read .env files
+  - pre-commit     # hooks for applying linters on commit
+  - rich           # beautiful text formatting in terminal
+  - pytest         # tests
+  - pip:
+    - wandb          # logging experiments
+    - pyrootutils    # standardizing the project root setup
 prefix: /opt/conda
