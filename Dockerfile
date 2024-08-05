@@ -10,7 +10,9 @@ RUN apt-get update && \
 # Set the working directory
 WORKDIR /workspace/code
 
+# Copy requirements and package data
 COPY pyproject.toml .
+COPY src /workspace/code/src
 
 # Install pip and setuptools
 RUN pip install --upgrade pip setuptools
