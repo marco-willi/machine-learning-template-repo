@@ -1,29 +1,53 @@
 name: base
 channels:
+  - defaults
   - conda-forge
   - pytorch
   - nvidia
 dependencies:
-  - python=3.10
   - pip
-  # --------- pytorch --------- #
+  # --------- visualize & image processing -------- #
+  - conda-forge::matplotlib
+  - conda-forge::seaborn
+  - scikit-image
+  # --------- machine learning --------- #
+  - conda-forge::transformers
+  - conda-forge::timm
+  # --------- PyTorch & Related --------- #
+  - pytorch::pytorch
   - pytorch::torchvision
   - pytorch::torchaudio
-  - pytorch::pytorch
-  - pytorch::pytorch-cuda=11.7
-  - torchmetrics
-  - pytorch-lightning
-  # --------- hydra --------- #
+  - conda-forge::torchmetrics
+  - conda-forge::lightning
+  - pytorch::pytorch-cuda=12.4
+  - pytorch::captum
+  # --------- Experiment Tracking --------- #
+  - conda-forge::wandb
   - hydra-core
+  # --------- juypter --------- #
+  - conda-forge::jupyter
+  - ipykernel
+  # --------- Misc --------- #
   - pip:
+    - opencv-python-headless
+    - Pillow
+    - kornia
+    - diffusers
+    - datasets
+    - torchshow
+    - img2dataset
+    - wandb          
+    - pyrootutils 
     - hydra-colorlog
     - hydra-optuna-sweeper
-  # --------- others --------- #
-  - python-dotenv  # read .env files
-  - pre-commit     # hooks for applying linters on commit
-  - rich           # beautiful text formatting in terminal
-  - pytest         # tests
-  - pip:
-    - wandb          # logging experiments
-    - pyrootutils    # standardizing the project root setup
+    # development
+    - jupyter-black
+    - black
+    - python-dotenv
+    - argcomplete
+    - mypy
+    - pre-commit
+    - rich
+    - ruff
+    - isort
 prefix: /opt/conda

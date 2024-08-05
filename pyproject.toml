@@ -1,3 +1,71 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "my_project"
+version = "0.0.0"
+description = "My Project Description"
+authors = [
+    { name = "Marco Willi", email = "marco.willi@fhnw.ch" }
+]
+
+dependencies = [
+    # Data Manipulation and Analysis
+    "pandas",
+    "numpy",
+    # Visualization
+    "matplotlib",
+    "seaborn",
+    "Pillow",
+    # Data Loading and Preprocessing
+    "datasets",
+    "img2dataset",
+    "opencv-python-headless",
+    "scikit-image",
+    "kornia",
+    "torchshow",
+    # Machine Learning and Deep Learning
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "torchmetrics",
+    "lightning",
+    "scikit-learn",
+    "timm",
+    "transformers",
+    "diffusers",
+    "captum",
+    "hydra-optuna-sweeper",
+    # Logging and Experiment Tracking
+    "wandb",
+    "hydra-core",
+    "hydra-colorlog",
+    # Jupyter and IPython
+    "jupyter",
+    "ipykernel",
+    "ipywidgets",
+    # Utilities
+    "tqdm",
+    "icecream",
+    "python-dotenv",
+    "dvc"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "jupyter-black",
+    "pyrootutils",
+    "argcomplete",
+    "pytest",
+    "mypy",
+    "pre-commit",
+    "rich",
+    "ruff",
+    "isort"
+]
+
