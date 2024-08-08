@@ -49,9 +49,11 @@ dependencies = [
     "ipykernel",
     "ipywidgets",
     # Utilities
+    "fire",
     "tqdm",
     "icecream",
     "python-dotenv",
+    "pyrootutils",
     "dvc"
 ]
 
@@ -59,7 +61,6 @@ dependencies = [
 dev = [
     "black",
     "jupyter-black",
-    "pyrootutils",
     "argcomplete",
     "pytest",
     "mypy",
