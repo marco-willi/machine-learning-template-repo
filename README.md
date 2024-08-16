@@ -10,3 +10,5 @@ Inspired by:
 
 
 Adapted through own experience, preferences and requirements.
+
+Needs to be adapted to individual projects.

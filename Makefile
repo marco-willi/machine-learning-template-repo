@@ -1,4 +1,4 @@
-.PHONY: docker-build docker-run docker-push
+.PHONY: docker-build docker-run docker-push data tests
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -30,9 +30,18 @@ docker-run:	## Run docker container
 		-it -d \
 		--gpus=all \
 		--shm-size 12G \
-		--name ml_template_repo ${CONTAINER_REGISTRY}:${IMAGE_TAG}
+		--name ${CONTAINER_NAME} ${CONTAINER_REGISTRY}:${IMAGE_TAG}
 
 docker-push: ## Push image to registry
 	docker login -u ${GIT_USER_NAME} -p ${CONTAINER_REGISTRY_PUSH_TOKEN} ${CONTAINER_REGISTRY}
 	docker push ${CONTAINER_REGISTRY}:${IMAGE_TAG}
 
+##### DATA
+
+data: ## Download and prepare data
+	echo "Preparing Data"
+
+##### TRAIN & DEV
+
+tests: ## run tests
+	pytest tests/
