@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "my_project"
+version = "0.0.1"
+description = "My Project Description"
+authors = [
+    { name = "Marco Willi", email = "marco.willi@fhnw.ch" }
+]
+
+dependencies = [
+    # Data Manipulation and Analysis
+    "pandas",
+    "numpy",
+    # Visualization
+    "matplotlib",
+    "seaborn",
+    "Pillow",
+    "torchshow",
+    # Machine Learning and Deep Learning
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "torchmetrics",
+    "lightning",
+    "scikit-learn",
+    # Logging and Experiment Tracking
+    "wandb",
+    "hydra-core",
+    # Jupyter and IPython
+    "jupyter",
+    "ipykernel",
+    # Utilities
+    "tqdm",
+    "python-dotenv",
+    "pyrootutils",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "jupyter-black",
+    "argcomplete",
+    "pytest",
+    "mypy",
+    "pre-commit",
+    "rich",
+    "ruff",
+    "isort"
+]
+

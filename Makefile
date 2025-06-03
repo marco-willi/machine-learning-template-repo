@@ -28,6 +28,7 @@ docker-run:	## Run docker container
 		-v ${HOST_CODE_PATH}:${CODE_PATH} \
 		-v ${HOST_DATA_PATH}:${DATA_PATH} \
 		-it -d \
+		-p 8886:8886 \
 		--gpus=all \
 		--shm-size 12G \
 		--name ${CONTAINER_NAME} ${CONTAINER_REGISTRY}:${IMAGE_TAG}
