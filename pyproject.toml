@@ -59,14 +59,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "black",
-    "jupyter-black",
-    "argcomplete",
     "pytest",
     "mypy",
     "pre-commit",
     "rich",
     "ruff",
-    "isort"
 ]
 
