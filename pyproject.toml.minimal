@@ -9,7 +9,9 @@ where = ["src"]
 name = "my_project"
 version = "0.0.1"
 description = "My Project Description"
-authors = [{ name = "Marco Willi", email = "marco.willi@fhnw.ch" }]
+authors = [
+    { name = "Marco Willi", email = "marco.willi@fhnw.ch" }
+]
 
 dependencies = [
     # Data Manipulation and Analysis
@@ -30,4 +32,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "mypy", "pre-commit", "rich", "ruff"]
+dev = [
+    "pytest",
+    "mypy",
+    "pre-commit",
+    "rich",
+    "ruff",
+]

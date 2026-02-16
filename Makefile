@@ -1,5 +1,3 @@
-.PHONY: data tests
-
 #################################################################################
 # GLOBALS                                                                       #
 #################################################################################
@@ -9,23 +7,22 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-CURRENT_UID := $(shell id -u)
-CURRENT_GID := $(shell id -g)
-
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
 
-
-help:	## Show this help.
-	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
+.PHONY: help
+help: ## Show all available commands
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 ##### DATA
 
+.PHONY: data
 data: ## Download and prepare data
-	echo "Preparing Data"
+	@echo "Preparing Data"
 
 ##### TRAIN & DEV
 
-tests: ## run tests
+.PHONY: tests
+tests: ## Run tests
 	pytest tests/

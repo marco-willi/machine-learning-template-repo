@@ -20,6 +20,17 @@ else
     echo "Warning: pyproject.toml not found"
 fi
 
+# Quick package check
+echo "Checking for key packages..."
+python -c "import torch; print(f'  torch {torch.__version__}')" 2>/dev/null || echo "  torch not found"
+python -c "import lightning; print(f'  lightning installed')" 2>/dev/null || echo "  lightning not found"
+
+# Setup Jupyter kernel
+echo ""
+echo "Setting up Jupyter kernel..."
+python -m ipykernel install --name=ml-template --display-name="Python (ML Template)"
+echo "Jupyter kernel installed"
+
 # Install pre-commit hooks if .pre-commit-config.yaml exists
 if [ -f ".pre-commit-config.yaml" ]; then
     echo ""
