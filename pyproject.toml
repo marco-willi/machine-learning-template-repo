@@ -9,7 +9,7 @@ where = ["src"]
 name = "my_project"
 version = "0.0.1"
 description = "My Project Description"
-authors = [{ name = "Marco Willi", email = "marco.willi@fhnw.ch" }]
+authors = [{ name = "Marco Willi", email = "mwilli-dev@proton.me" }]
 
 dependencies = [
     # Data Manipulation and Analysis

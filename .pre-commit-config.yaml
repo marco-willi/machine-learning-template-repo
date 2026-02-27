@@ -27,6 +27,8 @@ repos:
       - id: check-merge-conflict
       - id: mixed-line-ending
       - id: detect-private-key
+      - id: mixed-line-ending
+        args: [--fix=auto]
 
   # Python-specific checks
   - repo: https://github.com/pre-commit/pre-commit-hooks

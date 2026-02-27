@@ -45,7 +45,8 @@
         "charliermarsh.ruff",
         "ms-vscode.makefile-tools",
         "tamasfe.even-better-toml",
-        "anthropic.claude-code"
+        "anthropic.claude-code",
+        "ms-python.mypy-type-checker"
       ]
     }
   },
