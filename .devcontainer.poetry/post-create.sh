@@ -18,7 +18,6 @@ cd /workspace
 
 # Configure Poetry to create the venv inside the project at .venv/
 poetry config virtualenvs.in-project true
-
 poetry install --with dev
 
 # Auto-activate the in-project venv in every new terminal session
